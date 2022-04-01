@@ -100,7 +100,7 @@ const Quiz = ({ route, navigation } ) => {
 
                 }}>
                     <Text style={{ color: Colors.blueColor, fontSize: 20, opacity: 0.6, marginRight: 2 }}>{currentQuestionIndex + 1}</Text>
-                    <Text style={{ color: Colors.blueColor, fontSize: 18, opacity: 0.6 }}>{size(questions)}</Text>
+                    <Text style={{ color: Colors.blueColor, fontSize: 18, opacity: 0.6 }}>/ {size(questions)}</Text>
                 </View>
                 {/*Question*/}
                 <Text style={{
