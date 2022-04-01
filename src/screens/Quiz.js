@@ -318,7 +318,7 @@ const Quiz = ({ route, navigation } ) => {
                         </View>
                     </Modal>
                 <Image
-                    source={require('../assets/solos-no-podemos-web-tm.jpg')}
+                    source={require('../assets/solos-no-podemos-web-tm.png')}
                     style={{
                         width: wWidth,
                         height:130,
