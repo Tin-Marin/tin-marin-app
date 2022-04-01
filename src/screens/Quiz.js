@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, Animated } from 'react-native'
+import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, Animated, Dimensions } from 'react-native'
 import Colors from '../constants/Colors';
 import { getAllQuizzes } from '../api/quizzes'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -9,6 +9,8 @@ import {
     congratsButton,
     failButton
   } from '../helpers/audio';
+
+const { wWidth, wHeight } = Dimensions.get('window');
 
 const Quiz = ({ route, navigation } ) => {
     const questionE = route.params;
@@ -315,6 +317,18 @@ const Quiz = ({ route, navigation } ) => {
 
                         </View>
                     </Modal>
+                <Image
+                    source={require('../assets/solos-no-podemos-web-tm.jpg')}
+                    style={{
+                        width: wWidth,
+                        height:130,
+                        zIndex:-1,
+                        position: 'absolute',
+                        bottom: 0,
+                        left: 0,
+                        right: 0
+                    }}
+                />
 
                 </View>
             )}

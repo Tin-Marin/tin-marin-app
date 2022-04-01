@@ -76,19 +76,18 @@ const InfoCard = ({ route, navigation }) => {
         <Text style={styles.overview}>{exhibition.description}</Text>
         <Text style={styles.overview2}>Presiona el botón de la izquierda si quieres leer un dato curioso y presiona el de la derecha si quieres contestar preguntas:</Text>
         <View style={styles.btnCuriosidades}>
-          <InfoModal setVisible={setVisible} />
-          <TouchableOpacity
-            onPressIn={quizButton}
-            onPress={() => {
-              navigation.navigate('quiz', questions);
-            }}
-          >
-            <Image style={styles.imgQuiz} resizeMode="contain" source={exam} />
-          </TouchableOpacity>
+        <InfoModal setVisible={setVisible} />
+        <TouchableOpacity
+          onPressIn={quizButton}
+          onPress={() => {
+            navigation.navigate('quiz', questions);
+          }}
+        >
+          <Image style={styles.imgQuiz} resizeMode="contain" source={exam} />
+        </TouchableOpacity>
         </View>
         <InfoFooter exhibition={exhibition} />
       </ScrollView>
-
       <ModalBody
         visible={visible}
         showModal={showModal}
