@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity, Modal, Animated, Dimensions } from 'react-native'
+import { View, Text, SafeAreaView, StatusBar, ImageBackground, TouchableOpacity, Modal, Animated, Dimensions } from 'react-native'
 import Colors from '../constants/Colors';
 import { getAllQuizzes } from '../api/quizzes'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -99,12 +99,12 @@ const Quiz = ({ route, navigation } ) => {
                     alignItems: 'flex-end'
 
                 }}>
-                    <Text style={{ color: Colors.blueColor, fontSize: 20, opacity: 0.6, marginRight: 2 }}>{currentQuestionIndex + 1}</Text>
-                    <Text style={{ color: Colors.blueColor, fontSize: 18, opacity: 0.6 }}>/ {size(questions)}</Text>
+                    <Text style={{ color: Colors.counter, fontSize: 20, opacity: 0.6, marginRight: 2 }}>{currentQuestionIndex + 1}</Text>
+                    <Text style={{ color: Colors.tmBlue, fontSize: 18, opacity: 0.6 }}>/ {size(questions)}</Text>
                 </View>
                 {/*Question*/}
                 <Text style={{
-                    color: Colors.blueColor,
+                    color: Colors.question,
                     fontSize: 30
                 }}>{
                         //questions.question
@@ -131,18 +131,18 @@ const Quiz = ({ route, navigation } ) => {
                                     ? Colors.success
                                     : option == currentOptionSelected
                                         ? Colors.error
-                                        : Colors.secondary + '40',
+                                        : Colors.tmYellow + '40',
                                 backgroundColor: option == correctOption
                                     ? Colors.green + '20'
                                     : option == currentOptionSelected
                                         ? Colors.error + '20'
-                                        : Colors.secondary + '20',
+                                        : Colors.tmYellow + '20',
                                 height: 60, borderRadius: 20,
                                 flexDirection: 'row',
                                 alignItems: 'center', justifyContent: 'space-between',
                                 marginVertical: 10,
                             }}>
-                            <Text style={{ fontSize: 20, color: Colors.blueColor }}> {option} </Text>
+                            <Text style={{ fontSize: 20, color: Colors.tmViolet }}> {option} </Text>
 
                             {/*Show Check or cross based on correct answer*/}
 
@@ -154,7 +154,7 @@ const Quiz = ({ route, navigation } ) => {
                                         justifyContent: 'center', alignItems: 'center'
                                     }}>
                                         <MaterialCommunityIcons name="check" style={{
-                                            color: Colors.blueColor,
+                                            color: 'white',
                                             fontSize: 20
                                         }} />
                                     </View>
@@ -165,7 +165,7 @@ const Quiz = ({ route, navigation } ) => {
                                         justifyContent: 'center', alignItems: 'center'
                                     }}>
                                         <MaterialCommunityIcons name="close" style={{
-                                            color: Colors.blueColor,
+                                            color: 'white',
                                             fontSize: 20
                                         }} />
                                     </View>
@@ -185,7 +185,7 @@ const Quiz = ({ route, navigation } ) => {
                 <TouchableOpacity
                     onPress={handleNext}
                     style={{
-                        marginTop: 20, width: '100%', backgroundColor: Colors.accent, padding: 20, borderRadius: 5
+                        marginTop: 20, width: '100%', backgroundColor: Colors.tmBlue, padding: 20, borderRadius: 5
                     }}>
                     <Text style={{ fontSize: 20, color: Colors.white, textAlign: 'center' }}>Siguiente</Text>
                 </TouchableOpacity>
@@ -213,7 +213,7 @@ const Quiz = ({ route, navigation } ) => {
                 <Animated.View style={[{
                     height: 20,
                     borderRadius: 20,
-                    backgroundColor: Colors.accent
+                    backgroundColor: Colors.tmBlue
                 }, {
                     width: progressAnim
                 }]}>
@@ -236,11 +236,11 @@ const Quiz = ({ route, navigation } ) => {
                     textAlignVertical: 'center'
                 }}>Lo sentimos esta exhibición actualmente no tiene preguntas</Text>
             ) : (
-                <View style={{
+                <ImageBackground source={require('../assets/logoDrawer.png')} resizeMode='cover' style={{
                     flex: 1,
                     paddingVertical: 40,
                     paddingHorizontal: 16,
-                    backgroundColor: Colors.backgroundColor,
+                    backgroundColor: 'white',
                     position: 'relative'
                 }}>
 
@@ -317,20 +317,17 @@ const Quiz = ({ route, navigation } ) => {
 
                         </View>
                     </Modal>
-                <Image
-                    source={require('../assets/solos-no-podemos-web-tm.png')}
+                {/*<ImageBackground source={require('../assets/logoDrawer.png')} resizeMode='cover' 
                     style={{
-                        width: wWidth,
-                        height:130,
-                        zIndex:-1,
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        right: 0
-                    }}
-                />
+                        width: 400,
+                        height: 400,
+                        bottom: 400,
+                        right: 35
+                    }}>
 
-                </View>
+                </ImageBackground>*/}
+
+                </ImageBackground>
             )}
         </SafeAreaView >
     )
