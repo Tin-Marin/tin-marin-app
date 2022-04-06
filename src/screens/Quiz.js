@@ -8,11 +8,11 @@ import { createIconSetFromFontello } from 'react-native-vector-icons';
 import {
     congratsButton,
     failButton
-  } from '../helpers/audio';
+} from '../helpers/audio';
 
 const { wWidth, wHeight } = Dimensions.get('window');
 
-const Quiz = ({ route, navigation } ) => {
+const Quiz = ({ route, navigation }) => {
     const questionE = route.params;
     const [questions, setQuestions] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -99,13 +99,14 @@ const Quiz = ({ route, navigation } ) => {
                     alignItems: 'flex-end'
 
                 }}>
-                    <Text style={{ color: Colors.counter, fontSize: 20, opacity: 0.6, marginRight: 2 }}>{currentQuestionIndex + 1}</Text>
+                    <Text style={{ color: Colors.tmBlue, fontSize: 20, opacity: 0.6, marginRight: 2 }}>{currentQuestionIndex + 1}</Text>
                     <Text style={{ color: Colors.tmBlue, fontSize: 18, opacity: 0.6 }}>/ {size(questions)}</Text>
                 </View>
                 {/*Question*/}
                 <Text style={{
                     color: Colors.question,
-                    fontSize: 30
+                    fontSize: 30,
+                    textAlign: 'center'
                 }}>{
                         //questions.question
                         questions[currentQuestionIndex]?.question
@@ -128,25 +129,25 @@ const Quiz = ({ route, navigation } ) => {
                             style={{
                                 borderWidth: 3,
                                 borderColor: option == correctOption
+                                    ? Colors.tmYellow + '80'
+                                    : option == currentOptionSelected
+                                        ? Colors.tmGreen + '80'
+                                        : Colors.error + '80',
+                                backgroundColor: option == correctOption
                                     ? Colors.success
                                     : option == currentOptionSelected
                                         ? Colors.error
-                                        : Colors.tmYellow + '40',
-                                backgroundColor: option == correctOption
-                                    ? Colors.green + '20'
-                                    : option == currentOptionSelected
-                                        ? Colors.error + '20'
-                                        : Colors.tmYellow + '20',
+                                        : Colors.tmViolet,
                                 height: 60, borderRadius: 20,
                                 flexDirection: 'row',
-                                alignItems: 'center', justifyContent: 'space-between',
+                                alignItems: 'center', justifyContent: 'center',
                                 marginVertical: 10,
                             }}>
-                            <Text style={{ fontSize: 20, color: Colors.tmViolet }}> {option} </Text>
+                            <Text style={{ fontSize: 20, color: 'white' }}> {option} </Text>
 
                             {/*Show Check or cross based on correct answer*/}
 
-                            {
+                            {/*
                                 option == correctOption ? (
                                     <View style={{
                                         width: 30, height: 30, borderRadius: 30 / 2,
@@ -169,7 +170,7 @@ const Quiz = ({ route, navigation } ) => {
                                             fontSize: 20
                                         }} />
                                     </View>
-                                ) : null
+                                ) : null*/
                             }
 
                         </TouchableOpacity>
@@ -236,7 +237,7 @@ const Quiz = ({ route, navigation } ) => {
                     textAlignVertical: 'center'
                 }}>Lo sentimos esta exhibición actualmente no tiene preguntas</Text>
             ) : (
-                <ImageBackground source={require('../assets/logoDrawer.png')} resizeMode='cover' style={{
+                <View style={{
                     flex: 1,
                     paddingVertical: 40,
                     paddingHorizontal: 16,
@@ -264,19 +265,29 @@ const Quiz = ({ route, navigation } ) => {
                     >
                         <View style={{
                             flex: 1,
-                            backgroundColor: Colors.primaryColor,
+                            backgroundColor: score > (size(questions) / 2) ? Colors.tmBlue : Colors.error,
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
                             <View style={{
-                                backgroundColor: Colors.blueColor,
+                                backgroundColor: score > (size(questions) / 2) ? Colors.tmYellow : Colors.tmViolet,
                                 width: '90%',
                                 borderRadius: 20,
                                 padding: 20,
                                 alignItems: 'center'
                             }}>
-                                <Text style={{ fontSize: 30, fontWeight: 'bold' }}>{score > (size(questions) / 2) ? '¡Bien hecho, Lo lograste!' : '¡Intentalo de nuevo!'}</Text>
-
+                                <Text style={{ fontSize: 30, fontWeight: 'bold', textAlign: 'center' }}>{score > (size(questions) / 2) ? '¡Bien hecho, Lo lograste!' : '¡Intentalo de nuevo!'}</Text>
+                                {score > (size(questions) / 2) ? (
+                                    <MaterialCommunityIcons name="thumb-up" style={{
+                                        color: Colors.tmBlue,
+                                        fontSize: 40
+                                    }} />
+                                ) : (
+                                    <MaterialCommunityIcons name="close" style={{
+                                        color: Colors.error,
+                                        fontSize: 40
+                                    }} />
+                                )}
                                 <View style={{
                                     flexDirection: 'row',
                                     justifyContent: 'flex-start',
@@ -317,7 +328,7 @@ const Quiz = ({ route, navigation } ) => {
 
                         </View>
                     </Modal>
-                {/*<ImageBackground source={require('../assets/logoDrawer.png')} resizeMode='cover' 
+                    {/*<ImageBackground source={require('../assets/logoDrawer.png')} resizeMode='cover' 
                     style={{
                         width: 400,
                         height: 400,
@@ -327,7 +338,7 @@ const Quiz = ({ route, navigation } ) => {
 
                 </ImageBackground>*/}
 
-                </ImageBackground>
+                </View>
             )}
         </SafeAreaView >
     )

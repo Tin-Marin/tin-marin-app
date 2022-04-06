@@ -21,6 +21,7 @@ export default {
   tmViolet: '#93117e',
   success: '#97bf0d',
   error: '#e2001a',
+  tmGreen: '#009032',
 
   black: "#171717",
   white: "#FFFFFF",
