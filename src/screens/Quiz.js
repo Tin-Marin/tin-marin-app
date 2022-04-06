@@ -276,51 +276,61 @@ const Quiz = ({ route, navigation }) => {
                                 padding: 20,
                                 alignItems: 'center'
                             }}>
-                                <Text style={{ fontSize: 30, fontWeight: 'bold', textAlign: 'center' }}>{score > (size(questions) / 2) ? '¡Bien hecho, Lo lograste!' : '¡Intentalo de nuevo!'}</Text>
+                                <Text style={{ fontSize: 30, fontWeight: 'bold', textAlign: 'center' }}>{score > (size(questions) / 2) ? '¡Bien hecho, lo lograste!' : '¡Tu puedes, intentalo de nuevo!'}</Text>
                                 {score > (size(questions) / 2) ? (
                                     <MaterialCommunityIcons name="thumb-up" style={{
                                         color: Colors.tmBlue,
-                                        fontSize: 40
+                                        fontSize: 40,
+                                        marginTop: 10
                                     }} />
                                 ) : (
                                     <MaterialCommunityIcons name="close" style={{
                                         color: Colors.error,
-                                        fontSize: 40
+                                        fontSize: 40,
+                                        marginTop: 10
                                     }} />
                                 )}
                                 <View style={{
                                     flexDirection: 'row',
                                     justifyContent: 'flex-start',
                                     alignItems: 'center',
-                                    marginVertical: 20
+                                    marginVertical: 20,
+                                    marginTop: 15
                                 }}>
-                                    <Text style={{
-                                        fontSize: 30,
-                                        color: score > (size(questions) / 2) ? Colors.success : Colors.error
-                                    }}>{score}</Text>
+                                    <View style = {{
+                                        width: 20, height: 20, borderRadius: 15 / 2,
+                                        backgroundColor: score > (size(questions) / 2) ? Colors.tmBlue : Colors.error,
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
+                                    }}>
+                                        <Text style={{
+                                            fontSize: 20,
+                                            color: 'white'
+                                        }}>{score}</Text>
+                                    </View>
                                     <Text style={{
                                         fontSize: 20, color: Colors.black
-                                    }}>/ {size(questions)}</Text>
+                                    }}>/{size(questions)}</Text>
                                 </View>
                                 {/* Retry Quiz button */}
                                 <TouchableOpacity
                                     onPress={restartQuiz}
                                     style={{
-                                        backgroundColor: Colors.accent2,
-                                        padding: 20, width: '100%', borderRadius: 40, marginBottom: 20
+                                        width: '100%', backgroundColor: score > (size(questions) / 2) ? Colors.tmBlue : Colors.error, 
+                                        padding: 20, borderRadius: 5, marginBottom: 20
                                     }}>
                                     <Text style={{
-                                        textAlign: 'center', color: Colors.black, fontSize: 20
+                                        textAlign: 'center', color: 'white', fontSize: 20
                                     }}>Vuelve a intentarlo</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity
                                     onPress={() => { navigation.goBack() }}
                                     style={{
-                                        backgroundColor: Colors.accent2,
-                                        padding: 20, width: '100%', borderRadius: 40
+                                        width: '100%', backgroundColor: score > (size(questions) / 2) ? Colors.tmBlue : Colors.error, 
+                                        padding: 20, borderRadius: 5, marginBottom: 20
                                     }}>
                                     <Text style={{
-                                        textAlign: 'center', color: Colors.black, fontSize: 20
+                                        textAlign: 'center', color: 'white', fontSize: 20
                                     }}>Salir</Text>
                                 </TouchableOpacity>
 
