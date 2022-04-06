@@ -76,15 +76,15 @@ const InfoCard = ({ route, navigation }) => {
         <Text style={styles.overview}>{exhibition.description}</Text>
         <Text style={styles.overview2}>Presiona el botón de la izquierda si quieres leer un dato curioso y presiona el de la derecha si quieres contestar preguntas:</Text>
         <View style={styles.btnCuriosidades}>
-        <InfoModal setVisible={setVisible} />
-        <TouchableOpacity
-          onPressIn={quizButton}
-          onPress={() => {
-            navigation.navigate('quiz', questions);
-          }}
-        >
-          <Image style={styles.imgQuiz} resizeMode="contain" source={exam} />
-        </TouchableOpacity>
+          <InfoModal setVisible={setVisible} />
+          <TouchableOpacity
+            onPressIn={quizButton}
+            onPress={() => {
+              navigation.navigate('quiz', questions);
+            }}
+          >
+            <Image style={styles.imgQuiz} resizeMode="contain" source={exam} />
+          </TouchableOpacity>
         </View>
         <InfoFooter exhibition={exhibition} />
       </ScrollView>
@@ -240,9 +240,8 @@ const FooterItem = ({ title, desc, icon }) => {
 const styles = StyleSheet.create({
   btnCuriosidades: {
     marginTop: 20,
-    marginHorizontal: 20,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
 
   },
@@ -275,7 +274,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 30,
   },
   info: {
-    width: 180,
+    width: 150,
     height: 130,
   },
   viewInfo: {
