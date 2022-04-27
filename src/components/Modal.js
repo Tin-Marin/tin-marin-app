@@ -44,6 +44,6 @@ const styles = StyleSheet.create({
     fontSize: 16.5,
     width: '63%',
     textAlign: 'left',
-    paddingLeft: 10,
+    paddingLeft: 10,fontFamily:'BubblegumSans-Regular'
   },
 });

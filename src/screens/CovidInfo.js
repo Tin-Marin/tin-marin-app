@@ -182,13 +182,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
   },
   title: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     marginTop: 20,
     fontSize: 30,
     color: '#566573',
   },
   paragraph: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     marginVertical: 10,
     textAlign: 'justify',
     marginBottom: 10,
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   image: { width: '100%', height: 200, borderRadius: 15 },
   subtitle: {
     textAlign: 'center',
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     marginTop: 20,
     fontSize: 25,
     color: 'red',
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
   },
   card_title: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     textAlign: 'justify',
     backgroundColor: Colors.primaryColor,
     color: 'white',

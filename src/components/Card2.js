@@ -75,19 +75,20 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   titulo: {
-    fontFamily: 'Boogaloo-Regular',
-    fontSize: 22, 
+    fontFamily:'BubblegumSans-Regular',
+    fontSize: 25, 
     color: '#f29f05', 
-    fontWeight: 'bold', 
+    //fontWeight: 'bold', 
     textAlign: "center",
     marginBottom: 10,
+    
   },
 
   button: {
     paddingVertical: 7,
-    borderRadius: 60,
-    width: '50%',
-    height: 60,
+    borderRadius: 45,
+    width: '25%',
+    height: '50%',
     marginTop: -35,
     justifyContent: 'center',
     borderWidth: 3,
@@ -95,10 +96,10 @@ const styles = StyleSheet.create({
     
   },    
   buttonText: {
-    fontFamily: 'Boogaloo-Regular',
+    fontFamily:'BubblegumSans-Regular',
     textAlign: 'center',
     color: '#fff',
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
     fontSize: 17,
     opacity: 1,
   },

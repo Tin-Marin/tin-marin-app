@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     paddingBottom: 30,
   },
   title: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     marginTop: 20,
     fontSize: 30,
     color: '#566573',
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#D5D8DC',
   },
   text: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     textAlign: 'center',
     fontSize: 20,
     color: 'gray',

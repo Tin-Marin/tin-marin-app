@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   text: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     textAlign: 'center',
     fontSize: 20,
     color: 'gray',

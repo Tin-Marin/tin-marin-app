@@ -37,6 +37,7 @@
     "react-native-splash-screen": "^3.3.0",
     "react-native-unordered-list": "^1.0.4",
     "react-native-vector-icons": "^7.1.0",
+    "react-native-webview": "^11.18.1",
     "sweetalert2": "^10.13.0"
   },
   "devDependencies": {
@@ -54,7 +55,7 @@
   },
   "rnpm": {
     "assets": [
-   "./src/assets/fonts/"
+      "./src/assets/fonts/"
     ]
   }
 }

@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     padding: 8,
     fontSize: 16,
     textAlign: 'center',
-    fontWeight: 'bold',
+//    fontWeight: 'bold',
   },
   textStyle: {
     textAlign: 'center',
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
     marginTop: 15,
   },
   textStyleSmall: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     textAlign: 'center',
     fontSize: 14,
     color: '#000',
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#e3001b',
   },
   buttonTextStyle: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     color: '#fff',
     textAlign: 'center',
   },

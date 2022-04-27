@@ -6,6 +6,8 @@ import { IconButton } from 'react-native-paper';
 import HomeScreen from '../screens/HomeScreen';
 import ExhibitsScrn from '../screens/ExhibitsScreen';
 import EventsScreen from '../screens/EventsScreen';
+import VolunteeringScreen from '../screens/VolunteeringScreen';
+import CelebrationScreen from '../screens/CelebrationScreen';
 import CovidScreen from '../screens/CovidScreen';
 import ContactScreen from '../screens/ContactScreen';
 import SugerenceScreen from '../screens/SugerenceScreen';
@@ -135,7 +137,7 @@ export default function StackNavigation(props) {
         component={DonationScreen}
         options={{
           title: '',
-          headerLeft: () => buttonLeft(),
+          headerLeft: () => buttonLeft('donations'),
         }}
       />
       <Stack.Screen
@@ -163,6 +165,24 @@ export default function StackNavigation(props) {
           title: '',
           headerTransparent: false,
           headerLeft: () => buttonLeft('missionAndVision'),
+        }}
+      />
+      <Stack.Screen
+        name="volunteering"
+        component={VolunteeringScreen}
+        options={{
+          title: '',
+          headerTransparent: false,
+          headerLeft: () => buttonLeft('volunteering'),
+        }}
+      />
+      <Stack.Screen
+        name="celebration"
+        component={CelebrationScreen}
+        options={{
+          title: '',
+          headerTransparent: false,
+          headerLeft: () => buttonLeft('celebration'),
         }}
       />
       <Stack.Screen

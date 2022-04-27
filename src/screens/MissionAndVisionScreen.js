@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     color: '#20232a',
     textAlign: 'justify',
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     fontSize: 18,
   },
   title: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     marginTop: 16,
     paddingVertical: 8,
     borderRadius: 6,
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   tema: {
     marginTop: 13,
     textAlign: 'center',
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     fontSize: 24,
     color: '#B22222',
   },
@@ -101,11 +101,11 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
   },
   titular: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     marginTop: 20,
     fontSize: 30,
     color: '#566573',
-    fontWeight: 'bold',
+//    fontWeight: 'bold',
     textAlign: 'center',
   },
 });

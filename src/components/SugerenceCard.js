@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
   },
   textAreaContainer: {
     paddingHorizontal: 10,
+    fontFamily: 'Boogaloo-Regular',
     width: '100%',
     borderColor: '#d1d3e2',
     borderLeftWidth: 1,
@@ -61,6 +62,7 @@ const styles = StyleSheet.create({
   },
   textArea: {
     textAlignVertical: 'top',
+    fontFamily: 'Boogaloo-Regular',
   },
   viewCard: {
     flexDirection: 'column',
@@ -70,6 +72,7 @@ const styles = StyleSheet.create({
     height: 100,
   },
   tituloView: {
+    fontFamily: 'Boogaloo-Regular',
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
@@ -78,5 +81,9 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 15,
     borderTopLeftRadius: 15,
   },
-  titulo: { fontSize: 19, color: '#fff', fontWeight: 'bold' },
+  titulo: { fontSize: 19,
+     color: '#fff',
+     fontFamily: 'Boogaloo-Regular',
+//      fontWeight: 'bold'
+     },
 });

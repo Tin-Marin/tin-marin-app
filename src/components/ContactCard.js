@@ -57,8 +57,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 40,
     borderTopRightRadius: 15,
-    borderTopLeftRadius: 15,
+    borderTopLeftRadius: 15,fontFamily:'BubblegumSans-Regular'
   },
-  titulo: { fontSize: 19, color: '#fff', fontWeight: 'bold' },
-  subTitulo: { fontSize: 19, color: '#858796', fontWeight: 'normal' },
+  titulo: { fontSize: 19, color: '#fff', fontFamily:'BubblegumSans-Regular' },
+  subTitulo: { fontSize: 19, color: '#858796', fontWeight: 'normal',fontFamily:'BubblegumSans-Regular' },
 });

@@ -273,7 +273,7 @@ const Quiz = ({ route, navigation } ) => {
                                 padding: 20,
                                 alignItems: 'center'
                             }}>
-                                <Text style={{ fontSize: 30, fontWeight: 'bold' }}>{score > (size(questions) / 2) ? '¡Bien hecho, Lo lograste!' : '¡Intentalo de nuevo!'}</Text>
+                                <Text style={{ fontSize: 30, fontWeight: 'bold',fontFamily:'Boogaloo-Regular' }}>{score > (size(questions) / 2) ? '¡Bien hecho, Lo lograste!' : '¡Intentalo de nuevo!'}</Text>
 
                                 <View style={{
                                     flexDirection: 'row',
@@ -283,10 +283,10 @@ const Quiz = ({ route, navigation } ) => {
                                 }}>
                                     <Text style={{
                                         fontSize: 30,
-                                        color: score > (size(questions) / 2) ? Colors.success : Colors.error
+                                        color: score > (size(questions) / 2) ? Colors.success : Colors.error,fontFamily:'Boogaloo-Regular'
                                     }}>{score}</Text>
                                     <Text style={{
-                                        fontSize: 20, color: Colors.black
+                                        fontSize: 20, color: Colors.black,fontFamily:'Boogaloo-Regular'
                                     }}>/ {size(questions)}</Text>
                                 </View>
                                 {/* Retry Quiz button */}
@@ -294,10 +294,10 @@ const Quiz = ({ route, navigation } ) => {
                                     onPress={restartQuiz}
                                     style={{
                                         backgroundColor: Colors.accent2,
-                                        padding: 20, width: '100%', borderRadius: 40, marginBottom: 20
+                                        padding: 20, width: '100%', borderRadius: 40, marginBottom: 20,fontFamily:'Boogaloo-Regular'
                                     }}>
                                     <Text style={{
-                                        textAlign: 'center', color: Colors.black, fontSize: 20
+                                        textAlign: 'center', color: Colors.black, fontSize: 20,fontFamily:'Boogaloo-Regular'
                                     }}>Vuelve a intentarlo</Text>
                                 </TouchableOpacity>
                                 <TouchableOpacity
@@ -307,7 +307,7 @@ const Quiz = ({ route, navigation } ) => {
                                         padding: 20, width: '100%', borderRadius: 40
                                     }}>
                                     <Text style={{
-                                        textAlign: 'center', color: Colors.black, fontSize: 20
+                                        textAlign: 'center', color: Colors.black, fontSize: 20,fontFamily:'Boogaloo-Regular'
                                     }}>Salir</Text>
                                 </TouchableOpacity>
 

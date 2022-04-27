@@ -89,21 +89,21 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
   title: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     textAlign: 'center',
     marginTop: 20,
     fontSize: 30,
     color: '#566573',
   },
   paragraph: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     // marginVertical: 10,
     textAlign: 'justify',
     marginBottom: 10,
     fontSize: 15,
   },
   card_title: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     textAlign: 'justify',
     backgroundColor: Colors.primaryColor,
     color: 'white',
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#D5D8DC',
   },
   text: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     textAlign: 'center',
     fontSize: 20,
     color: 'gray',

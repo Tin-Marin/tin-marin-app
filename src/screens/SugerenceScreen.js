@@ -159,17 +159,19 @@ const styles = StyleSheet.create({
     height: 55,
     width: '60%',
     borderRadius: 10,
+    fontFamily: 'Boogaloo-Regular',
   },
   buttonText: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     color: '#fff',
-    fontWeight: 'bold',
+    fontSize: 22,
+//    fontWeight: 'bold',
   },
   title: {
-    fontFamily: 'NunitoSans-Bold',
+    fontFamily: 'Boogaloo-Regular',
     fontSize: 30,
     color: '#566573',
-    fontWeight: 'bold',
+//    fontWeight: 'bold',
     textAlign: 'center',
   },
   line: {

@@ -49,10 +49,12 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: '90%',
     height: 200,
+    fontFamily:'BubblegumSans-Regular'
   },
   viewCard: {
     flexDirection: 'column',
     alignItems: 'center',
+    fontFamily:'BubblegumSans-Regular'
   },
   tituloView: {
     width: '100%',
@@ -62,8 +64,9 @@ const styles = StyleSheet.create({
     height: 40,
     borderTopRightRadius: 15,
     borderTopLeftRadius: 15,
+    fontFamily:'BubblegumSans-Regular'
   },
-  titulo: {fontSize: 19, color: '#fff', fontWeight: 'bold'},
+  titulo: {fontSize: 19, color: '#fff',fontFamily:'BubblegumSans-Regular'},
   button: {
     paddingVertical: 7,
     borderRadius: 10,
@@ -71,13 +74,15 @@ const styles = StyleSheet.create({
     opacity: 0.8,
     height: 40,
     marginTop: -60,
+    fontFamily:'BubblegumSans-Regular'
   },
   buttonText: {
     textAlign: 'center',
     color: '#fff',
-    fontWeight: 'bold',
+    //FontWeight: 'bold',
     fontSize: 17,
     opacity: 1,
+    fontFamily:'BubblegumSans-Regular'
   },
   img: {
     width: '100%',

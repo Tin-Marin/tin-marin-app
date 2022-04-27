@@ -87,9 +87,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     height: 40,
     borderTopRightRadius: 15,
-    borderTopLeftRadius: 15,
+    borderTopLeftRadius: 15,fontFamily:'BubblegumSans-Regular'
   },
-  titulo: { fontSize: 19, color: '#fff', fontWeight: 'bold' },
+  titulo: { fontSize: 19, color: '#fff',fontFamily:'BubblegumSans-Regular' },
   button: {
     paddingVertical: 7,
     borderRadius: 10,
@@ -101,9 +101,10 @@ const styles = StyleSheet.create({
   buttonText: {
     textAlign: 'center',
     color: '#fff',
-    fontWeight: 'bold',
+    //fontWeight: 'bold',
     fontSize: 17,
     opacity: 1,
+    fontFamily:'BubblegumSans-Regular'
   },
   img: {
     width: '100%',

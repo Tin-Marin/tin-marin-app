@@ -40,14 +40,29 @@ const DrawerContent = (props) => {
         />
         <Drawer.Item
           label="Exhibiciones"
-          onPress={() =>{playButtonPress, navigation.navigate('exhibits')} }
+          onPress={() => { playButtonPress, navigation.navigate('exhibits') }}
           icon="ticket"
         />
-        {/* <Drawer.Item
-                    label="Eventos"
-                    onPress={()=> navigation.navigate("events")}
-                    icon="gift"
-                /> */}
+        <Drawer.Item
+          label="Eventos"
+          onPress={() => navigation.navigate("events")}
+          icon="gift"
+        />
+        <Drawer.Item
+          label="Voluntariado"
+          onPress={() => navigation.navigate('volunteering')}
+          icon="hand"
+        />
+        <Drawer.Item
+          label="Celebraciones"
+          onPress={() => navigation.navigate('celebration')}
+          icon="star"
+        />
+        <Drawer.Item
+          label="Donaciones"
+          onPress={() => navigation.navigate('donations')}
+          icon="heart"
+        />
         <Drawer.Item
           label="Recomendaciones Covid-19"
           onPress={() => navigation.navigate('covid')}
@@ -63,11 +78,6 @@ const DrawerContent = (props) => {
           onPress={() => navigation.navigate('comments')}
           icon="email-alert"
         />
-        {/* <Drawer.Item
-          label="Donaciones"
-          onPress={() => navigation.navigate('donations')}
-          icon="heart"
-        /> */}
         <Drawer.Item
           label="Preguntas Frecuentes"
           onPress={() => navigation.navigate('FAQs')}
@@ -89,14 +99,14 @@ const DrawerContent = (props) => {
 const styles = StyleSheet.create({
   image: {
     alignItems: 'center',
-    backgroundColor: '#4E73DF',
-    marginTop:20,
+    backgroundColor: '#ffd149',
+    marginTop: 20,
   },
   second: {
     color: '#860472',
   },
   drawer: {
-    backgroundColor: Colors.primaryColor,
+    backgroundColor: '#ffd149',
     color: '#FFF',
   },
 });
