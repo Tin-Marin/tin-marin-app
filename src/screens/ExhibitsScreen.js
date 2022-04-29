@@ -64,11 +64,11 @@ const ExhibitsScreen = ({ navigation }) => {
               swapColor = !swapColor;
             }
             return (
-              <Card
+              <Card 
                 key={exhibition._id}
                 index={index}
                 textBtn="Conócela"
-                color={swapColor ? Colors.green : Colors.magenta}
+                color={swapColor ? "#97bf0d" : "#93117e"}
                 exhibition={exhibition}
                 navigation={navigation}
               />
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     fontFamily: 'BubblegumSans-Regular',
     marginTop: 20,
     fontSize: 30,
-    color: '#566573',
+    color: '#e2001a',
   },
   line: {
     height: 1,

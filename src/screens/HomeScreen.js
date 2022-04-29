@@ -64,7 +64,7 @@ const HomeScreen = ({ navigation }) => {
           }}
           style={styles.cardContainer}>
           <Image
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
             source={playground}
           />
@@ -82,7 +82,7 @@ const HomeScreen = ({ navigation }) => {
           }}
           style={styles.cardContainer}>
           <Image
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
             source={covidicon2}
           />
@@ -101,7 +101,7 @@ const HomeScreen = ({ navigation }) => {
           }}
           style={styles.cardContainer}>
           <Image
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
             source={conocenosicon}
           />
@@ -121,7 +121,7 @@ const HomeScreen = ({ navigation }) => {
           }}
           style={styles.cardContainer}>
           <Image
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
             source={suggestion}
           />
@@ -141,7 +141,7 @@ const HomeScreen = ({ navigation }) => {
           }}
           style={styles.cardContainer}>
           <Image
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
             source={faq}
           />
@@ -160,7 +160,7 @@ const HomeScreen = ({ navigation }) => {
           }}
           style={{ ...styles.cardContainer }}>
           <Image
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
             source={sitiosicon}
           />
@@ -179,7 +179,7 @@ const HomeScreen = ({ navigation }) => {
           }}
           style={{ ...styles.cardContainer }}>
           <Image
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90 }}
             resizeMode="contain"
             source={eventsIco}
           />
@@ -202,7 +202,7 @@ const HomeScreen = ({ navigation }) => {
           />
           <View style={styles.textContainer}>
             <Text style={styles.textMorado}>Celebraciones</Text>
-            <MaterialCommunityIcons name="open-in-new" style={styles.textMorado}/>
+            <MaterialCommunityIcons name="open-in-new" style={styles.textMorado} />
             <Text style={styles.text2}>
               ¡Pásala divertido con tu familia y amigos!
             </Text>
@@ -214,13 +214,13 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => { Linking.openURL('https://tinmarin.org/donacion/') }}
           style={{ ...styles.donationContainer }}>
           <Image
-            style={{ width: 100, height: 100 }}
+            style={{ width: 90, height: 90, marginBottom: -10 }}
             resizeMode="contain"
             source={donationIco}
           />
           <View style={styles.textContainer}>
-            <Text style={styles.textMorado}>Dona aquí </Text>
-            <MaterialCommunityIcons name="open-in-new" style={styles.textMorado}/>
+            <Text style={styles.textMorado}>Dona aquí</Text>
+            <MaterialCommunityIcons name="open-in-new" style={styles.textMorado} />
             <Text style={styles.text2}>
               Tu ayuda es necesaria para seguir abiertos a las familias salvadoreñas
             </Text>
@@ -245,11 +245,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     alignItems: 'center',
+    marginLeft: 4,
+    marginTop: 5,
+    marginBottom:6,
   },
   cardContainer: {
     margin: 2,
     padding: 10,
-    width: Dimensions.get('window').width / 2 - 6,
+    width: Dimensions.get('window').width / 2 - 8,
     backgroundColor: 'white',
     borderRadius: 10,
     height: 250,
@@ -265,19 +268,20 @@ const styles = StyleSheet.create({
   donationContainer: {
     margin: 2,
     padding: 10,
-    width: Dimensions.get('window').width / 1 - 6,
+    width: Dimensions.get('window').width / 1 - 12.5,
     backgroundColor: 'white',
     borderRadius: 10,
+    borderBottomEndRadius: 20,
     height: 200,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 3,
-    marginBottom: 3,
+    marginTop: 2,
+    marginBottom: 5,
 
     shadowColor: '#470000',
     shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.2,
-    elevation: 3,
+    shadowOpacity: 0.5,
+    elevation: 4,
   },
   textContainer: {
     marginLeft: 5,
@@ -287,25 +291,25 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Boogaloo-Regular',
     color: '#E50E23',
-    fontSize: 24,
+    fontSize: 22,
     textAlign: "center"
   },
   textYellow: {
     fontFamily: 'Boogaloo-Regular',
     color: '#FABA00',
-    fontSize: 24,
+    fontSize: 22,
     textAlign: "center"
   },
   textMorado: {
     fontFamily: 'Boogaloo-Regular',
     color: '#93117D',
-    fontSize: 24,
+    fontSize: 22,
     textAlign: "center"
   },
   text2: {
     fontFamily: 'Boogaloo-Regular',
     color: '#393838',
-    fontSize: 15,
+    fontSize: 13,
     textAlign: "center"
   },
 });

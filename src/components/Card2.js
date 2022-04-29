@@ -8,7 +8,9 @@ import {
   Image,
 } from 'react-native';
 
-import {exhibitButton} from '../helpers/audio'
+import Colors from '../constants/Colors';
+
+import { exhibitButton } from '../helpers/audio'
 
 /**
  * Tarjeta utilizada para mostrar la información de las pantallas: Información de Covid, Exhibiciones, Preguntas Frecuentes, Busqueda    
@@ -25,20 +27,22 @@ import {exhibitButton} from '../helpers/audio'
  }}
  */
 
-const Card = ({ exhibition, color, textBtn, navigation}) => {
-  const {images, name, _id } = exhibition;
+const Card = ({ exhibition, color, textBtn, navigation }) => {
+  const { images, name, _id } = exhibition;
   const [imageURL] = images;
-  
+
   return (
     <SafeAreaView style={styles.card}>
       <Text style={styles.titulo}>{name}</Text>
-      <Image source={{uri: imageURL}} style={styles.img, [styles.img, {borderColor:color}]} />
+      <View style={{borderRadius: 35, borderWidth: 3, borderColor: color == Colors.magenta ? "#e2001a" : "#009032" }}>
+        <Image source={{ uri: imageURL }} style={styles.img, [styles.img, { borderColor: color }]} />
+      </View>
       <View style={styles.viewCard}>
-        <View style={[styles.button, {backgroundColor: "#f1bc00",}]}>
+        <View style={[styles.button, { backgroundColor: "#f1bc00", }]}>
           <TouchableOpacity
             style={styles.opacity}
             onPressIn={exhibitButton}
-            onPress={() => navigation.navigate('information', {_id})}>
+            onPress={() => navigation.navigate('information', { _id })}>
             <Text style={styles.buttonText}>{textBtn}</Text>
           </TouchableOpacity>
         </View>
@@ -55,7 +59,7 @@ export default Card;
 const styles = StyleSheet.create({
   card: {
     borderRadius: 15,
-    marginBottom: 40,
+    marginBottom: 80,
     marginTop: 20,
     width: '90%',
     height: 230,
@@ -75,41 +79,38 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   titulo: {
-    fontFamily:'BubblegumSans-Regular',
-    fontSize: 25, 
-    color: '#f29f05', 
+    fontFamily: 'BubblegumSans-Regular',
+    fontSize: 25,
+    color: '#f29400',
     //fontWeight: 'bold', 
     textAlign: "center",
     marginBottom: 10,
-    
+
   },
 
   button: {
     paddingVertical: 7,
     borderRadius: 45,
-    width: '25%',
-    height: '50%',
-    marginTop: -35,
+    width: '30%',
+    height: '48%',
+    marginTop: -20,
     justifyContent: 'center',
-    borderWidth: 3,
-    borderColor: '#e66a2b'
-    
-  },    
+    borderWidth: 2,
+    borderColor: '#009032'
+
+  },
   buttonText: {
-    fontFamily:'BubblegumSans-Regular',
+    fontFamily: 'BubblegumSans-Regular',
     textAlign: 'center',
     color: '#fff',
     //fontWeight: 'bold',
-    fontSize: 17,
+    fontSize: 19,
     opacity: 1,
   },
   img: {
     width: '100%',
-    height: '90%',
-    borderTopLeftRadius: 15,
-    borderTopRightRadius: 15,
-    borderBottomLeftRadius: 15,
-    borderBottomRightRadius: 15,
-    borderWidth: 6,
+    height: '100%',
+    borderRadius: 30,
+    borderWidth: 7,
   },
 });

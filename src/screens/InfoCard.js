@@ -121,8 +121,8 @@ const InfoImage = ({ path }) => {
       inactiveDotColor="#90A4AE"
       paginationBoxVerticalPadding={20}
       circleLoop
-      resizeMethod={'resize'}
-      resizeMode={'cover'}
+      //resizeMethod={'scale'}
+      resizeMode={'contain'}
       ImageComponentStyle={{ borderRadius: 15, width: '90%', marginTop: 5 }}
       imageLoadingColor="#2196F3"
     />
@@ -222,7 +222,7 @@ const FooterItem = ({ title, desc, icon }) => {
       />
       <Text style={[styles.textItem
         //, { fontWeight: 'bold' }
-        ]}>{title}</Text>
+      ]}>{title}</Text>
       {Array.isArray(desc) ? (
         map(desc, (d, index) => (
           <Text key={index} style={styles.textItem}>
@@ -243,11 +243,10 @@ const FooterItem = ({ title, desc, icon }) => {
 const styles = StyleSheet.create({
   btnCuriosidades: {
     marginTop: 20,
-    marginHorizontal: 20,
+    marginHorizontal: 15,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-
   },
   btnQuiz: {
     width: '25%',
@@ -261,6 +260,7 @@ const styles = StyleSheet.create({
   imgQuiz: {
     width: 100,
     height: 100,
+    marginRight: 15,
   },
   viewPoster: {
     shadowColor: '#000',
