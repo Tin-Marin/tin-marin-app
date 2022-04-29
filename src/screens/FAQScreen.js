@@ -62,9 +62,9 @@ const FAQScreen = ({ navigation }) => {
             {faqs.map((faq, index) => {
               return (
                 <Card key={index} containerStyle={{ borderRadius: 15 }}>
-                  <Card.Title style={styles.card_title}>
-                    {faq.question}
-                  </Card.Title>
+                  
+                    <Text style={styles.card_title}>{faq.question}</Text>                    
+                    
                   <View>
                     <Text style={styles.paragraph}>{faq.answer}</Text>
                   </View>
@@ -97,13 +97,14 @@ const styles = StyleSheet.create({
   },
   paragraph: {
     fontFamily: 'Boogaloo-Regular',
-    // marginVertical: 10,
+     marginVertical: 10,
     textAlign: 'justify',
     marginBottom: 10,
     fontSize: 15,
   },
   card_title: {
     fontFamily: 'Boogaloo-Regular',
+    fontSize: 20,
     textAlign: 'justify',
     backgroundColor: Colors.primaryColor,
     color: 'white',

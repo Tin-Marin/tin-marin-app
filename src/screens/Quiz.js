@@ -273,7 +273,9 @@ const Quiz = ({ route, navigation } ) => {
                                 padding: 20,
                                 alignItems: 'center'
                             }}>
-                                <Text style={{ fontSize: 30, fontWeight: 'bold',fontFamily:'Boogaloo-Regular' }}>{score > (size(questions) / 2) ? '¡Bien hecho, Lo lograste!' : '¡Intentalo de nuevo!'}</Text>
+                                <Text style={{ fontSize: 30, 
+                                //fontWeight: 'bold',
+                                fontFamily:'Boogaloo-Regular' }}>{score > (size(questions) / 2) ? '¡Bien hecho, Lo lograste!' : '¡Intentalo de nuevo!'}</Text>
 
                                 <View style={{
                                     flexDirection: 'row',

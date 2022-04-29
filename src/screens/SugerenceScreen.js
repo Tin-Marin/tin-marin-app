@@ -103,6 +103,7 @@ const SugerenceScreen = ({ navigation }) => {
                 key={key}
                 label={sugerenceType.name}
                 value={sugerenceType.name}
+                
               />
             ))}
           </Picker>
@@ -116,7 +117,7 @@ const SugerenceScreen = ({ navigation }) => {
       />
       <View style={styles.view}>
         <TouchableOpacity onPress={() => handleSend()} style={styles.button}>
-          <Text style={styles.buttonText}> Enviar! </Text>
+          <Text style={styles.buttonText}> ¡Enviar! </Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -133,8 +134,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#d1d3e2',
     overflow: 'hidden',
+    fontFamily: 'Boogaloo-Regular',
   },
   picker: {
+    fontFamily: 'Boogaloo-Regular',
     height: 50,
     width: '100%',
     backgroundColor: '#858796',
