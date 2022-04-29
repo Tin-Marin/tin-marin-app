@@ -9,7 +9,7 @@ const VolunteeringScreen = () => {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.view}>
-                <Text style={styles.titular}>Voluntariado</Text>
+                <Text style={styles.titular}>Programa De Voluntariado</Text>
                 <View style={styles.line}></View>    
                 <Text style={styles.tema}>Guías Tin Marín:</Text>
                 <Text style={styles.title2}>

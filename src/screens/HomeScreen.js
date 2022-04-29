@@ -184,7 +184,7 @@ const HomeScreen = ({ navigation }) => {
             source={eventsIco}
           />
           <View style={styles.textContainer}>
-            <Text style={styles.textMorado}>Voluntariado</Text>
+            <Text style={styles.textMorado}>Programa De Voluntariado</Text>
             <Text style={styles.text2}>
               Ayúdanos a dibujar sonrisas y enriquecer los conocimientos de la niñez y juventud salvadoreña.
             </Text>
