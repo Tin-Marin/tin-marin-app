@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import KnoMoreCard from '../components/KnoMoreCard';
 import Colors from '../constants/Colors';
 import InformacionDeContacto from '../assets/InformacionDeContacto.jpg';
-import MisionVisionValores from '../assets/MisionVisionValores.jpg';
+import MisionVisionValores from '../assets/MisionVisionValores2.jpg';
 
 /**
  * Pantalla que muestra una lista de tarjetas con enlaces a pantallas para conocer más sobre Tin Marín.
