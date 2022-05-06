@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, SafeAreaView, StatusBar, ImageBackground, TouchableOpacity, Modal, Animated, Dimensions } from 'react-native'
+import { View, Text, SafeAreaView, StatusBar, ImageBackground, TouchableOpacity, Modal, Animated, Dimensions, ViewPropTypes } from 'react-native'
 import Colors from '../constants/Colors';
 import { getAllQuizzes } from '../api/quizzes'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -96,17 +96,22 @@ const Quiz = ({ route, navigation }) => {
                 {/*Question Counter*/}
                 <View style={{
                     flexDirection: 'row',
-                    alignItems: 'flex-end'
-
+                    alignItems: 'flex-end',
+                    marginTop: -74,
+                    marginLeft: 2,
                 }}>
-                    <Text style={{ color: Colors.tmBlue, fontSize: 20, opacity: 0.6, marginRight: 2 }}>{currentQuestionIndex + 1}</Text>
-                    <Text style={{ color: Colors.tmBlue, fontSize: 18, opacity: 0.6 }}>/ {size(questions)}</Text>
+                    <Text style={{ color: Colors.tmBlue, fontSize: 30, opacity: 0.6, marginRight: 1, marginLeft: 3 }}>{currentQuestionIndex + 1}</Text>
+                    <Text style={{ color: Colors.tmBlue, fontSize: 22, opacity: 0.6 }}>/ {size(questions)}</Text>
                 </View>
                 {/*Question*/}
                 <Text style={{
-                    color: Colors.question,
-                    fontSize: 30,
-                    textAlign: 'center'
+                    color: 'black',
+                    fontSize: 25,
+                    textAlign: 'left',
+                    marginTop: 30,
+                    marginLeft: 5,
+                    width: '95%',
+                    marginBottom: 30
                 }}>{
                         //questions.question
                         questions[currentQuestionIndex]?.question
@@ -117,7 +122,7 @@ const Quiz = ({ route, navigation }) => {
 
     const renderOptions = () => {
         return (
-            <View>
+            <View style={{ flexDirection: 'column', alignItems: 'center', }}>
                 {
                     questions[currentQuestionIndex]?.options.map(option => (
                         //questions.options.map(option => (
@@ -127,23 +132,28 @@ const Quiz = ({ route, navigation }) => {
                             key={option}
                             //onPressIn={(option == correctOption) ? congratsButton : (option == currentOptionSelected) ? failButton : congratsButton}
                             style={{
-                                borderWidth: 3,
+                                /*borderWidth: 3,
                                 borderColor: option == correctOption
                                     ? Colors.tmYellow + '80'
                                     : option == currentOptionSelected
                                         ? Colors.tmGreen + '80'
-                                        : Colors.error + '80',
+                                        : Colors.error + '80',*/
                                 backgroundColor: option == correctOption
                                     ? Colors.success
                                     : option == currentOptionSelected
                                         ? Colors.error
-                                        : Colors.tmViolet,
-                                height: 60, borderRadius: 20,
+                                        : 'white',
+                                height: 60, width: '90%', borderRadius: 10,
                                 flexDirection: 'row',
-                                alignItems: 'center', justifyContent: 'center',
+                                alignItems: 'center', justifyContent: 'flex-start',
                                 marginVertical: 10,
+
+                                shadowColor: '#470000',
+                                shadowOffset: { width: 0, height: 1 },
+                                shadowOpacity: 0.2,
+                                elevation: 4,
                             }}>
-                            <Text style={{ fontSize: 20, color: 'white' }}> {option} </Text>
+                            <Text style={{ fontSize: 18, color: 'black' }}> {option} </Text>
 
                             {/*Show Check or cross based on correct answer*/}
 
@@ -186,7 +196,12 @@ const Quiz = ({ route, navigation }) => {
                 <TouchableOpacity
                     onPress={handleNext}
                     style={{
-                        marginTop: 20, width: '100%', backgroundColor: Colors.tmBlue, padding: 20, borderRadius: 5
+                        marginTop: 30, width: '55%', borderRadius: 20, backgroundColor: Colors.tmBlue, padding: 15,
+                        marginHorizontal: 65,
+                        shadowColor: '#470000',
+                        shadowOffset: { width: 0, height: 1 },
+                        shadowOpacity: 0.2,
+                        elevation: 3,
                     }}>
                     <Text style={{ fontSize: 20, color: Colors.white, textAlign: 'center' }}>Siguiente</Text>
                 </TouchableOpacity>
@@ -205,16 +220,23 @@ const Quiz = ({ route, navigation }) => {
     const renderProgressBar = () => {
         return (
             <View style={{
-                width: '100%',
+                width: '78%',
                 height: 20,
-                borderRadius: 20,
+                borderRadius: 15,
                 backgroundColor: '#00000020',
+                marginTop: 30,
+                marginBottom: 40,
+                marginLeft: '20%',
 
+                shadowColor: '#470000',
+                shadowOffset: { width: 0, height: 1 },
+                shadowOpacity: 0.2,
+                elevation: 3,
             }}>
                 <Animated.View style={[{
                     height: 20,
-                    borderRadius: 20,
-                    backgroundColor: Colors.tmBlue
+                    borderRadius: 15,
+                    backgroundColor: '#2b33f7'
                 }, {
                     width: progressAnim
                 }]}>
@@ -232,17 +254,38 @@ const Quiz = ({ route, navigation }) => {
             {loading ? (
                 <StatusBar barStyle='light-content' backgroundColor={Colors.primaryColor} />
             ) : size(questions) == 0 ? (
-                <Text style={{
-                    textAlign: 'center',
-                    textAlignVertical: 'center'
-                }}>Lo sentimos esta exhibición actualmente no tiene preguntas</Text>
+                <View style={{
+                    flex: 1,
+                    flexDirection: 'column',
+                    paddingVertical: 40,
+                    paddingHorizontal: 16,
+                    position: 'relative',
+                    justifyContent: 'center'
+                }}>
+                    <Text style={{
+                        textAlign: 'center',
+                        textAlignVertical: 'center',
+                        fontSize: 20,
+                        marginBottom: 50
+                    }}>Lo sentimos esta exhibición actualmente no tiene preguntas.</Text>
+                    <TouchableOpacity
+                        onPress={() => { navigation.goBack() }}
+                        style={{
+                            width: '100%', backgroundColor: Colors.tmBlue /*score > (size(questions) / 2) ? Colors.green : Colors.error*/,
+                            padding: 20, borderRadius: 20, marginBottom: 20
+                        }}>
+                        <Text style={{
+                            textAlign: 'center', color: 'white', fontSize: 20
+                        }}>Salir</Text>
+                    </TouchableOpacity>
+                </View>
             ) : (
                 <View style={{
                     flex: 1,
                     paddingVertical: 40,
                     paddingHorizontal: 16,
-                    backgroundColor: 'white',
-                    position: 'relative'
+                    position: 'relative',
+                    backgroundColor: '#b8c6e6'
                 }}>
 
                     {/* ProgressBar */}
@@ -265,21 +308,26 @@ const Quiz = ({ route, navigation }) => {
                     >
                         <View style={{
                             flex: 1,
-                            backgroundColor: score > (size(questions) / 2) ? Colors.tmBlue : Colors.error,
+                            backgroundColor: '#b8c6e6' /*score > (size(questions) / 2) ? Colors.tmBlue : Colors.error*/,
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
                             <View style={{
-                                backgroundColor: score > (size(questions) / 2) ? Colors.tmYellow : Colors.tmViolet,
+                                backgroundColor: 'white' /*score > (size(questions) / 2) ? Colors.tmYellow : Colors.tmViolet*/,
                                 width: '90%',
                                 borderRadius: 20,
                                 padding: 20,
-                                alignItems: 'center'
+                                alignItems: 'center',
+
+                                shadowColor: '#470000',
+                                shadowOffset: { width: 0, height: 1 },
+                                shadowOpacity: 0.2,
+                                elevation: 6,
                             }}>
                                 <Text style={{ fontSize: 30, fontWeight: 'bold', textAlign: 'center' }}>{score > (size(questions) / 2) ? '¡Bien hecho, lo lograste!' : '¡Tu puedes, intentalo de nuevo!'}</Text>
                                 {score > (size(questions) / 2) ? (
                                     <MaterialCommunityIcons name="thumb-up" style={{
-                                        color: Colors.tmBlue,
+                                        color: Colors.green,
                                         fontSize: 40,
                                         marginTop: 10
                                     }} />
@@ -297,11 +345,14 @@ const Quiz = ({ route, navigation }) => {
                                     marginVertical: 20,
                                     marginTop: 15
                                 }}>
-                                    <View style = {{
+                                    <View style={{
                                         width: 20, height: 20, borderRadius: 15 / 2,
-                                        backgroundColor: score > (size(questions) / 2) ? Colors.tmBlue : Colors.error,
+                                        backgroundColor: score > (size(questions) / 2) ? Colors.green : Colors.error,
                                         justifyContent: 'center',
-                                        alignItems: 'center'
+                                        alignItems: 'center',
+
+                                        shadowColor: '#000000',
+                                        elevation: 3,
                                     }}>
                                         <Text style={{
                                             fontSize: 20,
@@ -316,8 +367,8 @@ const Quiz = ({ route, navigation }) => {
                                 <TouchableOpacity
                                     onPress={restartQuiz}
                                     style={{
-                                        width: '100%', backgroundColor: score > (size(questions) / 2) ? Colors.tmBlue : Colors.error, 
-                                        padding: 20, borderRadius: 5, marginBottom: 20
+                                        width: '100%', backgroundColor: Colors.tmBlue /*score > (size(questions) / 2) ? Colors.green : Colors.error*/,
+                                        padding: 20, borderRadius: 20, marginBottom: 20
                                     }}>
                                     <Text style={{
                                         textAlign: 'center', color: 'white', fontSize: 20
@@ -326,8 +377,8 @@ const Quiz = ({ route, navigation }) => {
                                 <TouchableOpacity
                                     onPress={() => { navigation.goBack() }}
                                     style={{
-                                        width: '100%', backgroundColor: score > (size(questions) / 2) ? Colors.tmBlue : Colors.error, 
-                                        padding: 20, borderRadius: 5, marginBottom: 20
+                                        width: '100%', backgroundColor: Colors.tmBlue /*score > (size(questions) / 2) ? Colors.green : Colors.error*/,
+                                        padding: 20, borderRadius: 20, marginBottom: 20
                                     }}>
                                     <Text style={{
                                         textAlign: 'center', color: 'white', fontSize: 20
