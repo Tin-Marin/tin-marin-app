@@ -13,9 +13,15 @@ export default {
   primaryColor2:'#000',
   blueColor2:  "#6B4D9F",
   accent2: '#8c9ed1',
-  
-  success: '#00C851',
-  error: '#ff4444',
+
+  tmBlue: '#572381',
+  question: '#f29400',
+  counter: '#93117e',
+  tmYellow: '#fabb00',
+  tmViolet: '#93117e',
+  success: '#97bf0d',
+  error: '#e2001a',
+  tmGreen: '#009032',
 
   black: "#171717",
   white: "#FFFFFF",

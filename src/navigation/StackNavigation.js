@@ -54,7 +54,7 @@ export default function StackNavigation(props) {
   const { navigation } = props;
 
   const buttonLeft = (screen = 'not') => {
-    if (screen == 'information' || screen == 'search' || screen == 'FAQs')
+    if (screen == 'information' || screen == 'search' || screen == 'FAQs' || screen == 'quiz')
       return (
         <IconButton
           icon="arrow-left"
@@ -223,7 +223,8 @@ export default function StackNavigation(props) {
         component={Quiz}
         options={{
           title: '',
-          headerLeft: () => buttonLeft(),
+          headerTransparent: true,
+          headerLeft: () => buttonLeft('quiz'),
         }}
       />
     </Stack.Navigator>

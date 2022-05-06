@@ -88,7 +88,6 @@ const InfoCard = ({ route, navigation }) => {
         </View>
         <InfoFooter exhibition={exhibition} />
       </ScrollView>
-
       <ModalBody
         visible={visible}
         showModal={showModal}
@@ -245,7 +244,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginHorizontal: 15,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
   btnQuiz: {
@@ -278,7 +277,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 30,
   },
   info: {
-    width: 180,
+    width: 150,
     height: 130,
   },
   viewInfo: {
