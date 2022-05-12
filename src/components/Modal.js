@@ -8,12 +8,27 @@ import Marin from '../assets/icons/conocenosicon_old.png';
  * @param {string} curiousInfo - Dato curioso de la exhibición.
  * @return {View} Retorna un componente que contiene maquetada la vista
  */
+
+const images = [Tin, Marin];
+var imagenNumero = 0;
+var imagenCambio = (numero) => {
+  if (numero == 1) {
+    imagenNumero = 0;
+  } else {
+    imagenNumero = 1;
+  }
+  return imagenNumero;
+};
+
 const Modal = ({ curiousInfo }) => {
   return (
     <View style={styles.content}>
       <View style={styles.container}>
         <View style={styles.item}>
-          <Image source={Marin} style={styles.img} />
+          <Image
+            source={images[imagenCambio(imagenNumero)]}
+            style={styles.img}
+          />
         </View>
         <View style={styles.item}>
           <ScrollView
