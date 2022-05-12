@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
-import Tin from '../assets/tin.png';
-import Marin from '../assets/icons/conocenosicon.png';
+import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import Tin from '../assets/icons/sitiosicon.png';
+import Marin from '../assets/icons/conocenosicon_old.png';
 
 /**
  * Componente que muestra el contenido del modal.
@@ -11,8 +11,21 @@ import Marin from '../assets/icons/conocenosicon.png';
 const Modal = ({ curiousInfo }) => {
   return (
     <View style={styles.content}>
-      <Image source={Marin} style={styles.img} />
-      <Text style={styles.text}>{curiousInfo}</Text>
+      <View style={styles.container}>
+        <View style={styles.item}>
+          <Image source={Marin} style={styles.img} />
+        </View>
+        <View style={styles.item}>
+          <ScrollView
+            contentContainerStyle={{
+              flexGrow: 1,
+              justifyContent: 'center',
+              flexDirection: 'column',
+            }}>
+            <Text style={styles.text}>{curiousInfo}</Text>
+          </ScrollView>
+        </View>
+      </View>
     </View>
   );
 };
@@ -24,13 +37,12 @@ export default Modal;
  */
 const styles = StyleSheet.create({
   content: {
-    maxWidth: '90%',
-    minWidth: '60%',
+    width: 300,
     height: 150,
     marginTop: 20,
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    padding: 0,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   img: {
     height: 110,
@@ -38,12 +50,23 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
     justifyContent: 'center',
-    
   },
   text: {
     fontSize: 16.5,
-    width: '63%',
     textAlign: 'left',
-    paddingLeft: 10,fontFamily:'BubblegumSans-Regular'
+    fontFamily: 'BubblegumSans-Regular',
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+  },
+  item: {
+    width: '50%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

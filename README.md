@@ -130,3 +130,12 @@ Si no tenemos nuestro telefono conectado inicia un emulador de android studio
 # Importante
 
 - Solo se necesita la Terminal / Powershell no es necesario tener Android Studio abierto
+
+# Errores en listen 
+
+Si da error el puerto porque esta ocupado puedes utilizar :
+```
+netstat -ano | findstr :<PORT>
+
+taskkill /PID <PID> /F      
+```
