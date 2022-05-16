@@ -139,3 +139,14 @@ netstat -ano | findstr :<PORT>
 
 taskkill /PID <PID> /F      
 ```
+
+# Archivos que pueden dar error:
+
+# local.properties
+
+Si no se genera el archivo dentro de /android/
+
+crearlo y dentro poner:
+```
+sdk.dir=C:\\Users\\<userName>\\AppData\\Local\\Android\\Sdk
+```

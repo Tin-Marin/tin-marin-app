@@ -34,11 +34,19 @@ const Card = ({ exhibition, color, textBtn, navigation }) => {
   return (
     <SafeAreaView style={styles.card}>
       <Text style={styles.titulo}>{name}</Text>
-      <View style={{borderRadius: 35, borderWidth: 3, borderColor: color == Colors.magenta ? "#e2001a" : "#009032" }}>
-        <Image source={{ uri: imageURL }} style={styles.img, [styles.img, { borderColor: color }]} />
+      <View
+        style={{
+          borderRadius: 35,
+          borderWidth: 3,
+          borderColor: color == Colors.magenta ? '#e2001a' : '#e2001a',
+        }}>
+        <Image
+          source={{ uri: imageURL }}
+          style={(styles.img, [styles.img, { borderColor: color }])}
+        />
       </View>
       <View style={styles.viewCard}>
-        <View style={[styles.button, { backgroundColor: "#f1bc00", }]}>
+        <View style={[styles.button, { backgroundColor: '#f1bc00' }]}>
           <TouchableOpacity
             style={styles.opacity}
             onPressIn={exhibitButton}
