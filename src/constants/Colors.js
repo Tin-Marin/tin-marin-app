@@ -19,6 +19,7 @@ export default {
   counter: '#93117e',
   tmYellow: '#fabb00',
   tmViolet: '#93117e',
+  tmOrange: '#f29400',
   success: '#97bf0d',
   error: '#e2001a',
   tmGreen: '#009032',

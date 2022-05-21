@@ -1,10 +1,8 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Image, View } from 'react-native';
 import { DrawerContentScrollView } from '@react-navigation/drawer';
-import { Drawer, Avatar } from 'react-native-paper';
-import {
-  playButtonPress,
-} from '../helpers/audio';
+import { Drawer, Avatar, DefaultTheme } from 'react-native-paper';
+import { playButtonPress } from '../helpers/audio';
 import Colors from '../constants/Colors';
 
 /**
@@ -25,66 +23,76 @@ const DrawerContent = (props) => {
   return (
     <DrawerContentScrollView style={styles.drawer}>
       <Drawer.Section style={styles.image}>
-        <Avatar.Image
-          backgroundColor={'#FFF'}
-
-          size={100}
-          source={require('../assets/logoDrawer.png')}
-        />
+        <View style={{backgroundColor: 'white', borderRadius: 100, width: 150, height: 150, alignItems: 'center'}}>
+          <Image source={require('../assets/logoTinMarin.png')} style={styles.avatar}/>
+        </View>
       </Drawer.Section>
       <Drawer.Section>
         <Drawer.Item
           label="Menu Principal"
+          theme={itemT}
           onPress={() => navigation.navigate('home')}
           icon="home"
         />
         <Drawer.Item
           label="Exhibiciones"
+          theme={itemT}
           onPress={() => { playButtonPress, navigation.navigate('exhibits') }}
           icon="ticket"
         />
         <Drawer.Item
           label="Eventos"
+          theme={itemT}
           onPress={() => navigation.navigate("events")}
           icon="gift"
         />
         <Drawer.Item
           label="Voluntariado"
+          theme={itemT}
           onPress={() => navigation.navigate('volunteering')}
           icon="hand"
         />
         <Drawer.Item
           label="Celebraciones"
+          theme={itemT}
           onPress={() => navigation.navigate('celebration')}
           icon="star"
         />
         <Drawer.Item
           label="Donaciones"
+          theme={itemT}
           onPress={() => navigation.navigate('donations')}
           icon="heart"
         />
+      </Drawer.Section>
+      <Drawer.Section>
         <Drawer.Item
           label="Recomendaciones Covid-19"
+          theme={itemT}
           onPress={() => navigation.navigate('covid')}
           icon="virus"
         />
         <Drawer.Item
           label="Conócenos Más"
+          theme={itemT}
           onPress={() => navigation.navigate('knowMore')}
           icon="card-account-mail"
         />
         <Drawer.Item
           label="Sugerencias"
+          theme={itemT}
           onPress={() => navigation.navigate('comments')}
           icon="email-alert"
         />
         <Drawer.Item
           label="Preguntas Frecuentes"
+          theme={itemT}
           onPress={() => navigation.navigate('FAQs')}
           icon="frequently-asked-questions"
         />
         <Drawer.Item
           label="Sitios de Interés"
+          theme={itemT}
           onPress={() => navigation.navigate('WebLinks')}
           icon="web"
         />
@@ -93,21 +101,32 @@ const DrawerContent = (props) => {
   );
 };
 
+const itemT = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    text: 'black',
+  },
+};
+
 /**
  * @ignore
  */
 const styles = StyleSheet.create({
   image: {
     alignItems: 'center',
-    backgroundColor: '#ffd149',
     marginTop: 20,
   },
   second: {
     color: '#860472',
   },
   drawer: {
-    backgroundColor: '#ffd149',
-    color: '#FFF',
+    backgroundColor: Colors.tmYellow,
+  },
+  avatar: {
+    width: 145,
+    height: 145,
+    resizeMode: 'contain'
   },
 });
 

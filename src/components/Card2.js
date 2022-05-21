@@ -28,8 +28,9 @@ import { exhibitButton } from '../helpers/audio'
  */
 
 const Card = ({ exhibition, color, textBtn, navigation }) => {
-  const { images, name, _id } = exhibition;
+  const { images, sponsorLogo, name, _id } = exhibition;
   const [imageURL] = images;
+  const [logoURL] = sponsorLogo;
 
   return (
     <SafeAreaView style={styles.card}>
@@ -44,6 +45,9 @@ const Card = ({ exhibition, color, textBtn, navigation }) => {
           source={{ uri: imageURL }}
           style={(styles.img, [styles.img, { borderColor: color }])}
         />
+      </View>
+      <View style={styles.viewSponsor}>
+        {logoURL && <Image source={{ uri: logoURL }} style={(styles.imgSponsor)}/>}
       </View>
       <View style={styles.viewCard}>
         <View style={[styles.button, { backgroundColor: '#f1bc00' }]}>
@@ -120,5 +124,19 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 30,
     borderWidth: 7,
+  },
+  viewSponsor: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-end',
+  },
+  imgSponsor: {
+    width: 80,
+    height: 40,
+    backgroundColor: '#fff',
+    marginRight: 20,
+    marginTop: -60,
+    borderRadius: 10,
+    borderColor: '#000',
+    borderWidth: 0.15,
   },
 });

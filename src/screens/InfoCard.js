@@ -114,9 +114,7 @@ const InfoImage = ({ path }) => {
     <SliderBox
       images={path}
       sliderBoxHeight={400}
-      onCurrentImagePressed={(index) => console.warn(`image ${index} pressed`)}
-      currentImageEmitter={(index) => console.warn(`current pos is: ${index}`)}
-      dotColor="#FFEE58"
+      dotColor={Colors.tmYellow}
       inactiveDotColor="#90A4AE"
       paginationBoxVerticalPadding={20}
       circleLoop
@@ -164,7 +162,6 @@ const InfoTitle = ({ exhibition }) => {
 const InfoSponsor = ({ url }) => {
   return (
     <View style={styles.viewSponsor}>
-
       <Image source={{ uri: url }} style={styles.imgSponsor} />
     </View>
   );
@@ -333,14 +330,13 @@ const styles = StyleSheet.create({
   },
   viewSponsor: {
     justifyContent: 'flex-start',
-    alignItems: 'flex-end',
+    alignItems: 'center',
   },
   imgSponsor: {
     width: 100,
     height: 50,
     backgroundColor: '#fff',
     marginTop: -390,
-    marginRight: 30,
     borderRadius: 4,
     borderColor: '#000',
     borderWidth: 0.15,
