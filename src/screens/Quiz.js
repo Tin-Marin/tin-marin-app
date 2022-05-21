@@ -9,8 +9,8 @@ import {
     congratsButton,
     failButton
 } from '../helpers/audio';
-
-const { wWidth, wHeight } = Dimensions.get('window');
+import AnimationL from '../components/LoadinAnimation';
+import animation from '../assets/Animaciones/loading.json';
 
 const Quiz = ({ route, navigation }) => {
     const questionE = route.params;
@@ -24,8 +24,8 @@ const Quiz = ({ route, navigation }) => {
                     setQuestions(questions => [...questions, q]);
                 }
             });
+            setLoading(false);
         });
-        setLoading(false);
     }, []);
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
@@ -252,7 +252,7 @@ const Quiz = ({ route, navigation }) => {
             flex: 1
         }}>
             {loading ? (
-                <StatusBar barStyle='light-content' backgroundColor={Colors.primaryColor} />
+                <AnimationL path={animation}/>
             ) : size(questions) == 0 ? (
                 <View style={{
                     flex: 1,
