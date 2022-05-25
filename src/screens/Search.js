@@ -4,7 +4,6 @@ import {
   View,
   SafeAreaView,
   ScrollView,
-  Platform,
   Text,
   ActivityIndicator,
 } from 'react-native';
