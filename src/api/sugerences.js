@@ -30,7 +30,7 @@ export const getAllSuperenceTypes = () => {
  * .then((response) => {...});
  */
 export const storeSugerence = (suggestionType, suggestion) => {
-  const url = `${API_DEV}/suggestions`;
+  const url = `${API_HOST}/suggestions`;
   return fetch(url, {
     method: 'POST',
     headers: {

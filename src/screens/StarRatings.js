@@ -29,7 +29,7 @@ import { StyleSheet, SafeAreaView, View, Image, TouchableOpacity, Text} from 're
 
 
 const StarRatings = ({id, exhibition}) => {
-  console.log(exhibition)
+  //console.log(exhibition)
   // To set the default Star Selected
   const [defaultRating, setDefaultRating] = useState(2);
   // To set the max number of Stars

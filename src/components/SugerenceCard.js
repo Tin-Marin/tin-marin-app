@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
   textArea: {
     textAlignVertical: 'top',
     fontFamily: 'Boogaloo-Regular',
+    fontSize: 18
   },
   viewCard: {
     flexDirection: 'column',

@@ -38,7 +38,7 @@ const Quiz = ({ route, navigation }) => {
     function validateAnswer(selectedOption) {
         let correct_option = questions[currentQuestionIndex]?.correct_option;
         //let correct_option = questions[currentQuestionIndex]['correct_option'];
-        console.log('array', questions[currentQuestionIndex]?.correct_option);
+        //console.log('array', questions[currentQuestionIndex]?.correct_option);
         setCurrentOptionSelected(selectedOption);
         setCorrectOption(correct_option);
         setIsOptionsDisabled(true);
