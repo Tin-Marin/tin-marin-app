@@ -43,8 +43,14 @@ export const loseButton = () => {
   fail.setVolume(2);
   lose.play();
 }
+
 const win = new Sound (require('../audio/winner.mp3'), error => console.log(error))
 export const winnerButton = () => {
   win.setVolume(0.7);
   win.play();
+}
+
+const prueba = new Sound ('https://a.clyp.it/kzbdzfqd.mp3', null, error => console.log(error))
+export const pruebaButton = () => {
+  prueba.play();
 }
