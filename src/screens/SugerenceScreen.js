@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,7 +6,7 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
-  Alert,
+  Alert
 } from 'react-native';
 import SugerenceCard from '../components/SugerenceCard';
 import Colors from '../constants/Colors';
@@ -68,12 +68,13 @@ const SugerenceScreen = ({ navigation }) => {
 
   const handleSend = () => {
     if (comment === '' || sugerenceType === '') {
-      setError('Por favor, Ingrese un mensaje');
-      // console.log(sugerenceType);
+      Alert.alert('Por favor, ingrese un mensaje');
     } else {
       storeSugerence(sugerenceType, comment).then((response) => {
-        // console.log(`Respuesta del server: ${response.status}`);
-        Alert.alert('Se envió tu Sugerencia con Éxito!!!');
+        console.log(`Respuesta del server: ${response.status}`);
+        Alert.alert(response.status == 201 ? 
+          'Tu sugerencia ha sido envíada con éxito': 
+          'Ha ocurrido un problema, vuelve a intentarlo más tarde');
         setComment('');
       });
     }
@@ -95,7 +96,7 @@ const SugerenceScreen = ({ navigation }) => {
             style={styles.picker}
             mode="dropdown"
             selectedValue={sugerenceType}
-            onValueChange={(itemValue, itemPosition) => {
+            onValueChange={(itemValue) => {
               setSugerenceType(itemValue);
             }}>
             {sugerenceTypes.map((sugerenceType, key) => (
@@ -117,7 +118,7 @@ const SugerenceScreen = ({ navigation }) => {
       />
       <View style={styles.view}>
         <TouchableOpacity onPress={() => handleSend()} style={styles.button}>
-          <Text style={styles.buttonText}> ¡Enviar! </Text>
+          <Text style={styles.buttonText}>Enviar</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -137,13 +138,13 @@ const styles = StyleSheet.create({
     fontFamily: 'Boogaloo-Regular',
   },
   picker: {
-    fontFamily: 'Boogaloo-Regular',
     height: 50,
     width: '100%',
     backgroundColor: '#858796',
     color: 'white',
   },
   pickerItem: {
+    fontFamily: 'Boogaloo-Regular',
     height: 100,
     width: 500,
     width: '100%',
