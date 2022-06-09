@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 //new image imports for the new menu design
-import playground from '../assets/icons/museo_arte.png';
+import playground from '../assets/icons/marin.png';
 //import playground from '../assets/icons/museo.png';
 import newnormality from '../assets/icons/newnormality.png';
 import suggestion from '../assets/icons/suggestion.png';
@@ -31,7 +31,7 @@ import sitiosicon from '../assets/icons/sitios_tin.png';
 //import covidicon2 from '../assets/icons/covidicon2.png';
 import donationIco from '../assets/donarpng.png';
 import eventsIco from '../assets/icons/voluntariado.png';
-import celebIco from '../assets/icons/celebraciones.png';
+import celebIco from '../assets/icons/globos.png';
 
 import {
   selectButton
