@@ -9,7 +9,7 @@ const AnimationL = ({ path }) => {
                 source={path}
                 autoPlay
                 loop
-                speed={3}
+                speed={2}
             />
         </View>
     );
@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
     view: {
         width: 350,
         height: 350,
-        marginVertical: 100
+        marginVertical: 100,
+        marginHorizontal: 30
     },
 });

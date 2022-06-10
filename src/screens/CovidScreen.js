@@ -12,6 +12,8 @@ import GenericCard from '../components/GenericCard';
 import Colors from '../constants/Colors';
 import { ScrollView } from 'react-native-gesture-handler';
 import { size } from 'lodash';
+import AnimationL from '../components/LoadinAnimation';
+import animation from '../assets/Animaciones/loading.json';
 
 /**
  * Pantalla que muestra una lista de tarjetas sobre recomendaciones sobre el COVID-19
@@ -50,13 +52,7 @@ const CovidScreen = ({ navigation }) => {
     <SafeAreaView>
       <ScrollView showsVerticalScrollIndicator={false}>
         {loading ? (
-          <ActivityIndicator
-            style={{
-              marginTop: 200,
-            }}
-            size="large"
-            color="#0000ff"
-          />
+          <AnimationL path={animation} />
         ) : size(covid) == 0 ? (
           <Text style={styles.text}>No se encontraron Recomendaciones</Text>
         ) : (

@@ -13,6 +13,8 @@ import { map, size } from 'lodash';
 import { getExhibitionByName } from '../api/exhibitions';
 import Card from '../components/Card2';
 import Colors from '../constants/Colors';
+import AnimationL from '../components/LoadinAnimation';
+import animation from '../assets/Animaciones/loading.json';
 
 /**
  * Pantalla que muestra una lista de tarjetas con enlaces a pantallas para conocer más sobre Tin Marín.
@@ -71,13 +73,7 @@ const Search = ({ navigation }) => {
       />
       <ScrollView showsVerticalScrollIndicator={false}>
         {loading ? (
-          <ActivityIndicator
-            style={{
-              marginTop: 200,
-            }}
-            size="large"
-            color="#0000ff"
-          />
+          <AnimationL path={animation} />
         ) : size(exhibitions) == 0 ? (
           <Text style={styles.text}>No se encontraron exhibiciones</Text>
         ) : (
