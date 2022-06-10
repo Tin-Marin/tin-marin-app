@@ -9,8 +9,10 @@ import {
 } from 'react-native';
 import { getAllExhibitions } from '../api/exhibitions';
 import Card from '../components/Card2';
-import Colors from '../constants/Colors';
+import AnimationL from '../components/LoadinAnimation';
+import animation from '../assets/Animaciones/loading.json';
 import { size } from 'lodash';
+
 
 /**
  * Pantalla que muestra una lista de tarjetas sobre las Exhibiciones
@@ -46,13 +48,7 @@ const ExhibitsScreen = ({ navigation }) => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       {loading ? (
-        <ActivityIndicator
-          style={{
-            marginTop: 200,
-          }}
-          size="large"
-          color="#0000ff"
-        />
+        <AnimationL path={animation} />
       ) : size(exhibitions) == 0 ? (
         <Text style={styles.text}>No se encontraron Exhibiciones</Text>
       ) : (
@@ -64,7 +60,7 @@ const ExhibitsScreen = ({ navigation }) => {
               swapColor = !swapColor;
             }
             return (
-              <Card 
+              <Card
                 key={exhibition._id}
                 index={index}
                 textBtn="Conócela"

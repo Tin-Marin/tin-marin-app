@@ -11,6 +11,8 @@ import Colors from '../constants/Colors';
 import { getAllLinks } from '../api/weblinks';
 import { LogBox } from 'react-native';
 import { size } from 'lodash';
+import AnimationL from '../components/LoadinAnimation';
+import animation from '../assets/Animaciones/loading.json';
 
 LogBox.ignoreAllLogs();
 
@@ -55,13 +57,7 @@ const WebLinksScreen = ({ navigation }) => {
   return (
     <ScrollView showsVerticalScrollIndicator={true}>
       {loading ? (
-        <ActivityIndicator
-          style={{
-            marginTop: 200,
-          }}
-          size="large"
-          color="#0000ff"
-        />
+        <AnimationL path={animation} />
       ) : size(links) == 0 ? (
         <Text style={styles.text}>No se encontraron Sitios de Interés</Text>
       ) : (
