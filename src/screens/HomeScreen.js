@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 //new image imports for the new menu design
-import playground from '../assets/icons/marin.png';
+import playground from '../assets/icons/Marin.png';
 //import playground from '../assets/icons/museo.png';
 import newnormality from '../assets/icons/newnormality.png';
 import suggestion from '../assets/icons/suggestion.png';
