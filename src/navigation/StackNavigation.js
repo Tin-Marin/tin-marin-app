@@ -20,6 +20,11 @@ import FAQScreen from '../screens/FAQScreen';
 import WebLinksScreen from '../screens/WebLinksScreen';
 import CovidInfo from '../screens/CovidInfo';
 import Quiz from '../screens/Quiz';
+import ExtScholarshipsScreen from '../screens/ExtScholarshipsScreen';
+import ExtSeminarScreen from '../screens/ExtSeminarScreen';
+import ExtSocialServiceScreen from '../screens/ExtSocialServiceScreen';
+import ExtVolunteeringScreen from '../screens/ExtVolunteeringScreen';
+
 /**
  * @param {props} navigation  Contiene información básica de navegación
  * @property {function} Stack se crea el el stack de pantallas aqui se iran anexando cada pantalla que se vaya añadiendo en el drawer
@@ -40,7 +45,7 @@ import Quiz from '../screens/Quiz';
 /**
  * Crea el StackNavigator
 */
- const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 
 /**
  * Este archivo permite a la aplicacion identificar todas las pantallas con las que cuenta la app, para poder navegar entre las diferentes pantallas. Ademas tambien permite que se despliegue el menu lateral izquierdo y el boton de busqueda en la pantalla de exhibiciones.
@@ -227,6 +232,43 @@ export default function StackNavigation(props) {
           headerLeft: () => buttonLeft('quiz'),
         }}
       />
+
+      <Stack.Screen
+        name="Scholarships"
+        component={ExtScholarshipsScreen}
+        options={{
+          title: '',
+          headerLeft: () => buttonLeft(),
+        }}
+      />
+
+      <Stack.Screen
+        name="Seminar"
+        component={ExtSeminarScreen}
+        options={{
+          title: '',
+          headerLeft: () => buttonLeft(),
+        }}
+      />
+
+      <Stack.Screen
+        name="SocialS"
+        component={ExtSocialServiceScreen}
+        options={{
+          title: '',
+          headerLeft: () => buttonLeft(),
+        }}
+      />
+
+      <Stack.Screen
+        name="ExtVol"
+        component={ExtVolunteeringScreen}
+        options={{
+          title: '',
+          headerLeft: () => buttonLeft(),
+        }}
+      />
+
     </Stack.Navigator>
   );
 }

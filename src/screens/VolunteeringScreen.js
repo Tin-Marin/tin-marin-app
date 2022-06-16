@@ -1,16 +1,22 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
+import KnoMoreCard from '../components/KnoMoreCard';
+import Colors from '../constants/Colors';
+import I1 from '../assets/logoTinMarin.png';
+import I2 from '../assets/logoTinMarin.png';
+import I3 from '../assets/logoTinMarin.png';
+import I4 from '../assets/logoTinMarin.png';
 
 /**
  * Pantalla que muestra la misión y visión de la entidad.
  * @return {ScrollView} Regresa una layout con scroll vertical, y muestra la maquetación de la pantalla.
  */
-const VolunteeringScreen = () => {
+const VolunteeringScreen = ({ navigation }) => {
     return (
         <ScrollView style={styles.container}>
             <View style={styles.view}>
                 <Text style={styles.titular}>Programa De Voluntariado</Text>
-                <View style={styles.line}></View>    
+                <View style={styles.line}></View>
                 <Text style={styles.tema}>Guías Tin Marín:</Text>
                 <Text style={styles.title2}>
                     Si eres una persona joven con vocación de servicio, proactividad, disposición a aprender y compartir tu tiempo junto a muchos niños y niñas. ¡Inscríbete! y forma parte de nuestro equipo de Guías Tin Marín.
@@ -34,12 +40,44 @@ const VolunteeringScreen = () => {
                     Horarios flexibles para estudiantes que trabajan.{'\n'}
                 </Text>
                 <Text style={styles.tema}>Extensiones del Programa:</Text>
-                <Text style={styles.title2}>
-                    Voluntariado.{'\n'}
-                    Servicio Social.{'\n'}
-                    Seminario para Jóvenes.{'\n'}
-                    Becas de Estudio.{'\n'}
-                </Text>
+                <View style={styles.line}></View>
+
+                <KnoMoreCard
+                    title="Voluntariado"
+                    imageURL={I1}
+                    color={Colors.tmViolet}
+                    textBtn="Saber Más"
+                    navigation={navigation}
+                    screenName="ExtVol"
+                />
+
+                <KnoMoreCard
+                    title="Servicio Social"
+                    imageURL={I2}
+                    color={Colors.tmViolet}
+                    textBtn="Saber Más"
+                    navigation={navigation}
+                    screenName="SocialS"
+                />
+
+                <KnoMoreCard
+                    title="Seminario para Jóvenes"
+                    imageURL={I3}
+                    color={Colors.tmViolet}
+                    textBtn="Saber Más"
+                    navigation={navigation}
+                    screenName="Seminar"
+                />
+                
+                <KnoMoreCard
+                    title="Becas de Estudio"
+                    imageURL={I4}
+                    color={Colors.tmViolet}
+                    textBtn="Saber Más"
+                    navigation={navigation}
+                    screenName="Scholarships"
+                />
+
                 <Text style={styles.footer}>
                     Para mayor información puedes contactarnos al 7603-5411 o proyeccionsocialtinmarin@gmail.com{'\n'}
                 </Text>

@@ -71,7 +71,7 @@ const SugerenceScreen = ({ navigation }) => {
       Alert.alert('Por favor, ingrese un mensaje');
     } else {
       storeSugerence(sugerenceType, comment).then((response) => {
-        console.log(`Respuesta del server: ${response.status}`);
+        //console.log(`Respuesta del server: ${response.status}`);
         Alert.alert(response.status == 201 ? 
           'Tu sugerencia ha sido envíada con éxito': 
           'Ha ocurrido un problema, vuelve a intentarlo más tarde');
