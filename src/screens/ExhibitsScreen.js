@@ -1,17 +1,15 @@
-import { map } from 'lodash';
+import { map, size } from 'lodash';
 import React, { useEffect, useState } from 'react';
 import {
   StyleSheet,
   Text,
   View,
   ScrollView,
-  ActivityIndicator,
 } from 'react-native';
 import { getAllExhibitions } from '../api/exhibitions';
 import Card from '../components/Card2';
 import AnimationL from '../components/LoadinAnimation';
 import animation from '../assets/Animaciones/loading.json';
-import { size } from 'lodash';
 
 
 /**

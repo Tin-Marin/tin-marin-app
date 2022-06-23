@@ -5,7 +5,6 @@ import {
   View,
   Image,
   TouchableOpacity,
-  Pressable,
 } from 'react-native';
 import { IconButton, Text, Title } from 'react-native-paper';
 import { getExhibitionById } from '../api/exhibitions';
@@ -18,7 +17,6 @@ import curiosidades1 from '../assets/icons/curiosidades1.png';
 import exam from '../assets/icons/exam.png';
 
 import {
-  wowButton,
   quizButton
 } from '../helpers/audio';
 

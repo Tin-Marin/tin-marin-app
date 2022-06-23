@@ -1,13 +1,10 @@
-import { noConflict } from 'lodash';
 import React from 'react';
 import {
   StyleSheet,
   Text,
   View,
-  ImageBackground,
   ScrollView,
   TouchableOpacity,
-  FlatList,
   Dimensions,
   Image,
   Linking
@@ -16,15 +13,10 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 //new image imports for the new menu design
 import playground from '../assets/icons/Marin.png';
 //import playground from '../assets/icons/museo.png';
-import newnormality from '../assets/icons/newnormality.png';
 import suggestion from '../assets/icons/suggestion.png';
 import faq from '../assets/icons/faq.png';
-import solidarity from '../assets/icons/solidarity.png';
-import calendar from '../assets/icons/calendar.png';
-import man from '../assets/icons/man.png';
 
 //new images for the menu icons
-import covidicon from '../assets/icons/covidicon.png';
 import covidicon2 from '../assets/icons/covid_icon.png';
 import conocenosicon from '../assets/icons/conversacion.png';
 import sitiosicon from '../assets/icons/sitios_tin.png';
@@ -36,7 +28,6 @@ import celebIco from '../assets/icons/globos.png';
 import {
   selectButton
 } from '../helpers/audio';
-import ConocenosMas from '../assets/ConocenosMas.jpg';
 
 /**
  * Pantalla Principal que contiene una lista de tarjetas con los accesos directos de los diferentes
