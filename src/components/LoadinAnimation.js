@@ -6,6 +6,7 @@ const AnimationL = ({ path }) => {
     return (
         <View style={styles.view}>
             <LottieView
+                style={styles.lottie}
                 source={path}
                 autoPlay
                 loop
@@ -19,9 +20,11 @@ export default AnimationL;
 
 const styles = StyleSheet.create({
     view: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    lottie: {
         width: 350,
         height: 350,
-        marginVertical: 100,
-        marginHorizontal: 30
-    },
+    }
 });
