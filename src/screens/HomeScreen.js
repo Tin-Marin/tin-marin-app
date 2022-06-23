@@ -22,7 +22,8 @@ import conocenosicon from '../assets/icons/conversacion.png';
 import sitiosicon from '../assets/icons/sitios_tin.png';
 //import covidicon2 from '../assets/icons/covidicon2.png';
 import donationIco from '../assets/donarpng.png';
-import eventsIco from '../assets/icons/voluntariado.png';
+//import eventsIco from '../assets/icons/guiasTM.png';
+import eventsIco from '../assets/icons/guias_mitad.png';
 import celebIco from '../assets/icons/globos.png';
 
 import {
