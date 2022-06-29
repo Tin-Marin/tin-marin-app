@@ -1,4 +1,6 @@
-package com.tinmarin;
+// package com.tinmarin;
+
+package com.tinmarin.tinmarinapp;
 
 import android.app.Application;
 import android.content.Context;

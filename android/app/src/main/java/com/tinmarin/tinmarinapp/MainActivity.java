@@ -1,4 +1,6 @@
-package com.tinmarin;
+// package com.tinmarin;
+
+package com.tinmarin.tinmarinapp;
 
 import com.facebook.react.ReactActivity;
 import org.devio.rn.splashscreen.SplashScreen;

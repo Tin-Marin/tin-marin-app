@@ -1,4 +1,7 @@
-package com.tinmarin;
+// package com.tinmarin;
+
+package com.tinmarin.tinmarinapp;
+
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
